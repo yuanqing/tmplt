@@ -51,6 +51,11 @@ To use tmplt in the browser, include [the minified script](https://github.com/yu
 </body>
 ```
 
+## Changelog
+
+- 0.1.0
+  - Initial release
+
 ## License
 
 [MIT license](https://github.com/yuanqing/tmplt/blob/master/LICENSE)
