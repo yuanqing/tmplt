@@ -1,6 +1,6 @@
 {
   "name": "tmplt",
-  "main": "dist/tmplt.min.js",
+  "main": "tmplt.min.js",
   "version": "0.1.1",
   "homepage": "https://github.com/yuanqing/tmplt",
   "authors": [
