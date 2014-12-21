@@ -1,7 +1,7 @@
 {
   "name": "tmplt",
   "main": "dist/tmplt.min.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/yuanqing/tmplt",
   "authors": [
     "Lim Yuan Qing <hello@yuanqing.sg>"
