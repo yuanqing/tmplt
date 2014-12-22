@@ -1,6 +1,6 @@
 {
   "name": "tmplt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Minimal templating for JavaScript.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
