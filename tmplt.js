@@ -7,7 +7,7 @@
     module.exports = exports = factory;
   }
 })((function() {
-  var pattern = /{\s*([^{]+?)\s*}/g;
+  var pattern = /{\s*([^}]+?)\s*}/g;
   return function(tmpl) {
     return new Function('d', "with(d||{}){return '" + tmpl.replace(pattern, "'+$1+'") + "';}");
   };
