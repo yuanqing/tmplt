@@ -1,14 +1,7 @@
-/* jshint quotmark: false */
-(function(factory) {
-  // istanbul ignore if
-  if (typeof exports === 'undefined') {
-    this.tmplt = factory;
-  } else {
-    module.exports = exports = factory;
-  }
-})((function() {
-  var pattern = /{\s*([^}]+?)\s*}/g;
-  return function(tmpl) {
-    return new Function('d', "with(d||{}){return '" + tmpl.replace(pattern, "'+$1+'") + "';}");
-  };
-})());
+'use strict';
+
+var INTERPOLATE_REGEX = /{{\s*([^}]+?)\s*}}/g;
+
+module.exports = function(tmpl) {
+  return new Function('d', "with(d||{}){return '" + tmpl.replace(INTERPOLATE_REGEX, "'+$1+'") + "';}");
+};
