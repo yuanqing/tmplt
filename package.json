@@ -22,8 +22,7 @@
   },
   "scripts": {
     "lint": "jshint --verbose tmplt.js test/*.js",
-    "test": "rm -rf coverage && istanbul cover -- tape test/*.js --verbose",
-    "build": "npm run lint && npm test && npm run dist"
+    "test": "rm -rf coverage && istanbul cover -- tape test/*.js --verbose"
   },
   "keywords": [
     "interpolate",
