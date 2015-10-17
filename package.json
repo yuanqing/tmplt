@@ -8,7 +8,6 @@
     "type": "git",
     "url": "git://github.com/yuanqing/tmplt.git"
   },
-  "main": "tmplt.js",
   "dependencies": {
     "split": "^1.0.0",
     "stream-combiner": "^0.2.2",
@@ -21,7 +20,7 @@
     "tape": "^4.2.1"
   },
   "scripts": {
-    "lint": "jshint --verbose tmplt.js test/*.js",
+    "lint": "jshint --verbose index.js test/*.js",
     "test": "rm -rf coverage && istanbul cover -- tape test/*.js --verbose"
   },
   "keywords": [
