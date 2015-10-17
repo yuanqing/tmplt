@@ -9,16 +9,20 @@
     "url": "git://github.com/yuanqing/tmplt.git"
   },
   "main": "tmplt.js",
+  "dependencies": {
+    "split": "^1.0.0",
+    "stream-combiner": "^0.2.2",
+    "through2": "^2.0.0"
+  },
   "devDependencies": {
+    "concat-stream": "^1.5.0",
     "istanbul": "^0.4.0",
     "jshint": "^2.8.0",
-    "tape": "^4.2.1",
-    "uglify-js": "^2.5.0"
+    "tape": "^4.2.1"
   },
   "scripts": {
     "lint": "jshint --verbose tmplt.js test/*.js",
     "test": "rm -rf coverage && istanbul cover -- tape test/*.js --verbose",
-    "dist": "browserify --standalone tmplt tmplt.js | uglifyjs --mangle --output tmplt.min.js",
     "build": "npm run lint && npm test && npm run dist"
   },
   "keywords": [
