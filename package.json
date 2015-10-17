@@ -12,12 +12,12 @@
   "devDependencies": {
     "istanbul": "^0.4.0",
     "jshint": "^2.8.0",
-    "minijasminenode2": "^1.0.0",
+    "tape": "^4.2.1",
     "uglify-js": "^2.5.0"
   },
   "scripts": {
     "lint": "jshint --verbose tmplt.js test/*.js",
-    "test": "rm -rf coverage && istanbul cover -- minijasminenode2 test/*.js --verbose",
+    "test": "rm -rf coverage && istanbul cover -- tape test/*.js --verbose",
     "dist": "browserify --standalone tmplt tmplt.js | uglifyjs --mangle --output tmplt.min.js",
     "build": "npm run lint && npm test && npm run dist"
   },

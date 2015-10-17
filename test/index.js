@@ -1,38 +1,39 @@
-/* globals describe, it, expect */
 'use strict';
 
 var tmplt = require('..');
+var test = require('tape');
 
-describe('tmplt(tmpl)(data)', function() {
+test('tmplt(tmpl)(data)', function(t) {
 
-  it('works without `data`', function() {
-    expect(tmplt('foo')()).toBe('foo');
+  t.test('works without `data`', function(t) {
+    t.plan(1);
+    t.equal(tmplt('foo')(), 'foo');
   });
 
-  it('interpolates values in `data`', function() {
+  t.test('interpolates values in `data`', function(t) {
+    t.plan(4);
     var data = { foo: 'bar' };
-    expect(tmplt('{{foo}}')(data)).toBe('bar');
-    expect(tmplt('{{ foo}}')(data)).toBe('bar');
-    expect(tmplt('{{foo }}')(data)).toBe('bar');
-    expect(tmplt('{{ foo }}')(data)).toBe('bar');
+    t.equal(tmplt('{{foo}}')(data), 'bar');
+    t.equal(tmplt('{{ foo}}')(data), 'bar');
+    t.equal(tmplt('{{foo }}')(data), 'bar');
+    t.equal(tmplt('{{ foo }}')(data), 'bar');
   });
 
-  it('interpolates nested values in `data`', function() {
-    expect(tmplt('{{ foo }}, {{ bar.baz }}!')({
+  t.test('interpolates nested values in `data`', function(t) {
+    t.plan(1);
+    t.equal(tmplt('{{ foo }}, {{ bar.baz }}!')({
       foo: 'Hello',
       bar: {
         baz: 'World'
       }
-    })).toBe('Hello, World!');
+    }), 'Hello, World!');
   });
 
-  it('throws if a variable referenced in `tmpl` is not in `data`', function(done) {
-    try {
+  t.test('throws if a variable referenced in `tmpl` is not in `data`', function(t) {
+    t.plan(1);
+    t.throws(function() {
       tmplt('{{ foo }}')({});
-    } catch(err) {
-      expect(err.message.indexOf('foo is not defined') !== -1).toBe(true);
-      done();
-    }
+    });
   });
 
 });
